@@ -72,3 +72,4 @@ Thumbs.db
 *.local
 *.log.*
 schema-cache.json
+.env
