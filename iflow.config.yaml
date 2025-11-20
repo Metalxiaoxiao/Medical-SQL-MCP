@@ -1,0 +1,70 @@
+# iFlow 配置文件
+# 用于 Medical SQL MCP 服务的开发和测试
+
+name: "Medical SQL MCP Server"
+description: "用于医院数据库的自然语言查询MCP服务器"
+version: "0.1.0"
+
+# 服务配置
+service:
+  name: "medical-sql-mcp"
+  type: "http"
+  port: 3000
+  host: "127.0.0.1"
+
+# 开发配置
+dev:
+  watch: true
+  restart_on_change: true
+  files:
+    - "src/**/*.ts"
+    - ".env"
+
+# 构建配置
+build:
+  command: "npm run build"
+  output_dir: "dist"
+  src_dir: "src"
+
+# 运行配置
+run:
+  command: "npm run dev"
+  env_file: ".env"
+
+# 测试配置
+test:
+  endpoints:
+    - method: "GET"
+      path: "/ls"
+      description: "获取虚拟树结构"
+    - method: "POST"
+      path: "/exec"
+      description: "执行SQL查询"
+      example: |
+        {
+          "sql": "SELECT * FROM patients LIMIT 5"
+        }
+    - method: "POST"
+      path: "/nlq"
+      description: "自然语言查询"
+      example: |
+        {
+          "text": "帮我找一下库里过去三年，做过免疫治疗且出现过免疫性肺炎的三期肺癌患者有多少？"
+        }
+    - method: "POST"
+      path: "/refresh"
+      description: "刷新虚拟树"
+
+# 数据库配置
+database:
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
+  database: ${DB_DATABASE}
+
+# API配置
+api:
+  openai_key: ${OPENAI_API_KEY}
+  model: ${OPENAI_MODEL}
+  base_url: ${OPENAI_BASE_URL}

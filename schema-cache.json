@@ -1,0 +1,3233 @@
+{
+  "database": "hospital_management",
+  "categories": {
+    "收费": [
+      {
+        "name": "charges",
+        "comment": "收费记录表",
+        "columns": [
+          {
+            "name": "charge_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "charge_no",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "patient_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "registration_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "hospitalization_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "prescription_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "surgery_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "item_type",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "item_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "item_amount",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "quantity",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "unit_price",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "total_amount",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "discount_amount",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "actual_amount",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "payment_method",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "payment_status",
+            "data_type": "varchar",
+            "key": "MUL"
+          },
+          {
+            "name": "payment_date",
+            "data_type": "datetime",
+            "key": ""
+          },
+          {
+            "name": "charge_user",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "invoice_no",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "remarks",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": "MUL"
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "收费",
+        "llm_description": "存储收费记录信息"
+      }
+    ],
+    "科室管理": [
+      {
+        "name": "departments",
+        "comment": "科室表",
+        "columns": [
+          {
+            "name": "department_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "hospital_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "department_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "department_code",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "parent_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "category",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "director_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "phone",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "location",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "description",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "is_active",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "科室管理",
+        "llm_description": "存储科室信息"
+      }
+    ],
+    "诊断": [
+      {
+        "name": "diagnoses",
+        "comment": "诊断记录表",
+        "columns": [
+          {
+            "name": "diagnosis_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "diagnosis_no",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "registration_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "patient_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "doctor_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "diagnosis_date",
+            "data_type": "datetime",
+            "key": "MUL"
+          },
+          {
+            "name": "chief_complaint",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "present_illness",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "physical_examination",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "auxiliary_examination",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "diagnosis_result",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "diagnosis_code",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "differential_diagnosis",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "treatment_plan",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "medical_advice",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "is_primary",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "诊断",
+        "llm_description": "存储诊断记录信息"
+      }
+    ],
+    "医生信息": [
+      {
+        "name": "doctors",
+        "comment": "医生表",
+        "columns": [
+          {
+            "name": "doctor_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "doctor_code",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "doctor_name",
+            "data_type": "varchar",
+            "key": "MUL"
+          },
+          {
+            "name": "gender",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "birth_date",
+            "data_type": "date",
+            "key": ""
+          },
+          {
+            "name": "id_card",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "phone",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "email",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "department_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "title",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "position",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "specialty",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "education",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "work_years",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "registration_fee",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "is_specialist",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "is_active",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "hire_date",
+            "data_type": "date",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "医生信息",
+        "llm_description": "存储医生基本信息"
+      }
+    ],
+    "检查": [
+      {
+        "name": "examination_items",
+        "comment": "检查项目表",
+        "columns": [
+          {
+            "name": "item_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "item_code",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "item_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "category",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "subcategory",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "department_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "price",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "unit",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "normal_range",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "clinical_significance",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "precautions",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "is_active",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "检查",
+        "llm_description": "存储检查项目定义"
+      },
+      {
+        "name": "examination_results",
+        "comment": "检查结果表",
+        "columns": [
+          {
+            "name": "result_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "result_no",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "registration_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "patient_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "item_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "examination_date",
+            "data_type": "datetime",
+            "key": "MUL"
+          },
+          {
+            "name": "result_value",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "result_text",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "is_normal",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "reference_range",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "unit",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "technician_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "auditor_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "audit_date",
+            "data_type": "datetime",
+            "key": ""
+          },
+          {
+            "name": "equipment_info",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "remarks",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "status",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "检查",
+        "llm_description": "存储检查结果记录"
+      }
+    ],
+    "住院": [
+      {
+        "name": "hospitalizations",
+        "comment": "住院记录表",
+        "columns": [
+          {
+            "name": "hospitalization_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "hospitalization_no",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "patient_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "hospital_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "department_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "doctor_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "admission_date",
+            "data_type": "datetime",
+            "key": "MUL"
+          },
+          {
+            "name": "discharge_date",
+            "data_type": "datetime",
+            "key": ""
+          },
+          {
+            "name": "bed_no",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "room_no",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "admission_type",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "admission_status",
+            "data_type": "varchar",
+            "key": "MUL"
+          },
+          {
+            "name": "chief_complaint",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "admission_diagnosis",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "discharge_diagnosis",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "treatment_outcome",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "total_cost",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "deposit",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "emergency_contact",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "emergency_phone",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "remarks",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "住院",
+        "llm_description": "存储住院记录信息"
+      }
+    ],
+    "医院信息": [
+      {
+        "name": "hospitals",
+        "comment": "医院信息表",
+        "columns": [
+          {
+            "name": "hospital_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "hospital_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "hospital_code",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "level",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "type",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "address",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "phone",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "email",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "website",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "established_date",
+            "data_type": "date",
+            "key": ""
+          },
+          {
+            "name": "bed_count",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "description",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "医院信息",
+        "llm_description": "存储医院基本信息"
+      }
+    ],
+    "药品": [
+      {
+        "name": "medicines",
+        "comment": "药品信息表",
+        "columns": [
+          {
+            "name": "medicine_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "medicine_code",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "medicine_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "generic_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "english_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "dosage_form",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "specification",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "manufacturer",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "approval_no",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "category",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "drug_type",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "unit",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "price",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "stock_quantity",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "min_stock",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "max_stock",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "storage_conditions",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "indications",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "contraindications",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "adverse_reactions",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "precautions",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "validity_period",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "is_active",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "药品",
+        "llm_description": "存储药品信息"
+      }
+    ],
+    "患者信息": [
+      {
+        "name": "patients",
+        "comment": "患者表",
+        "columns": [
+          {
+            "name": "patient_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "patient_code",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "patient_name",
+            "data_type": "varchar",
+            "key": "MUL"
+          },
+          {
+            "name": "gender",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "birth_date",
+            "data_type": "date",
+            "key": ""
+          },
+          {
+            "name": "id_card",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "medical_card_no",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "phone",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "emergency_contact",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "emergency_phone",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "address",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "marital_status",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "occupation",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "blood_type",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "allergy_history",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "medical_history",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "family_history",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "is_active",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "患者信息",
+        "llm_description": "存储患者基本信息"
+      }
+    ],
+    "治疗": [
+      {
+        "name": "prescription_details",
+        "comment": "处方明细表",
+        "columns": [
+          {
+            "name": "detail_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "prescription_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "medicine_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "quantity",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "unit",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "dosage",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "frequency",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "duration",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "price",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "subtotal",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "remarks",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "治疗",
+        "llm_description": "存储处方明细信息"
+      },
+      {
+        "name": "prescriptions",
+        "comment": "处方表",
+        "columns": [
+          {
+            "name": "prescription_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "prescription_no",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "registration_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "patient_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "doctor_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "prescription_date",
+            "data_type": "datetime",
+            "key": "MUL"
+          },
+          {
+            "name": "prescription_type",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "total_amount",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "usage_method",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "treatment_days",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "status",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "pharmacist_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "dispensing_date",
+            "data_type": "datetime",
+            "key": ""
+          },
+          {
+            "name": "remarks",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "治疗",
+        "llm_description": "存储处方主记录"
+      },
+      {
+        "name": "surgeries",
+        "comment": "手术记录表",
+        "columns": [
+          {
+            "name": "surgery_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "surgery_no",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "hospitalization_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "registration_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "patient_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "doctor_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "surgery_date",
+            "data_type": "datetime",
+            "key": "MUL"
+          },
+          {
+            "name": "surgery_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "surgery_level",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "anesthesia_method",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "surgery_duration",
+            "data_type": "int",
+            "key": ""
+          },
+          {
+            "name": "preoperative_diagnosis",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "postoperative_diagnosis",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "surgery_description",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "complications",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "pathology_result",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "surgery_outcome",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "is_emergency",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "assistant_doctors",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "anesthesiologist",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "scrub_nurse",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "circulating_nurse",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "status",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "治疗",
+        "llm_description": "存储手术记录信息"
+      }
+    ],
+    "挂号": [
+      {
+        "name": "registrations",
+        "comment": "挂号记录表",
+        "columns": [
+          {
+            "name": "registration_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "registration_no",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "patient_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "hospital_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "department_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "doctor_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "registration_type",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "visit_date",
+            "data_type": "date",
+            "key": "MUL"
+          },
+          {
+            "name": "time_slot",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "status",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "registration_fee",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "actual_fee",
+            "data_type": "decimal",
+            "key": ""
+          },
+          {
+            "name": "payment_status",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "payment_method",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "is_first_visit",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "complaint",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "挂号",
+        "llm_description": "存储挂号记录信息"
+      }
+    ],
+    "权限管理": [
+      {
+        "name": "roles",
+        "comment": "角色权限表",
+        "columns": [
+          {
+            "name": "role_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "role_name",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "role_code",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "description",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "permissions",
+            "data_type": "text",
+            "key": ""
+          },
+          {
+            "name": "is_active",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "权限管理",
+        "llm_description": "存储角色和权限信息"
+      }
+    ],
+    "用户管理": [
+      {
+        "name": "users",
+        "comment": "用户表",
+        "columns": [
+          {
+            "name": "user_id",
+            "data_type": "int",
+            "key": "PRI"
+          },
+          {
+            "name": "username",
+            "data_type": "varchar",
+            "key": "UNI"
+          },
+          {
+            "name": "password_hash",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "real_name",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "role_id",
+            "data_type": "int",
+            "key": "MUL"
+          },
+          {
+            "name": "email",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "phone",
+            "data_type": "varchar",
+            "key": ""
+          },
+          {
+            "name": "is_active",
+            "data_type": "tinyint",
+            "key": ""
+          },
+          {
+            "name": "last_login",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp",
+            "key": ""
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp",
+            "key": ""
+          }
+        ],
+        "llm_category": "用户管理",
+        "llm_description": "存储系统用户信息"
+      }
+    ]
+  },
+  "tables": {
+    "charges": {
+      "name": "charges",
+      "comment": "收费记录表",
+      "columns": [
+        {
+          "name": "charge_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "charge_no",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "registration_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "hospitalization_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "prescription_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "surgery_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "item_type",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "item_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "item_amount",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "quantity",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "unit_price",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "total_amount",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "discount_amount",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "actual_amount",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "payment_method",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "payment_status",
+          "data_type": "varchar",
+          "key": "MUL"
+        },
+        {
+          "name": "payment_date",
+          "data_type": "datetime",
+          "key": ""
+        },
+        {
+          "name": "charge_user",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "invoice_no",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "remarks",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": "MUL"
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "收费",
+      "llm_description": "存储收费记录信息"
+    },
+    "departments": {
+      "name": "departments",
+      "comment": "科室表",
+      "columns": [
+        {
+          "name": "department_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "hospital_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "department_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "department_code",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "parent_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "category",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "director_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "phone",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "location",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "description",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "is_active",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "科室管理",
+      "llm_description": "存储科室信息"
+    },
+    "diagnoses": {
+      "name": "diagnoses",
+      "comment": "诊断记录表",
+      "columns": [
+        {
+          "name": "diagnosis_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "diagnosis_no",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "registration_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "doctor_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "diagnosis_date",
+          "data_type": "datetime",
+          "key": "MUL"
+        },
+        {
+          "name": "chief_complaint",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "present_illness",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "physical_examination",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "auxiliary_examination",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "diagnosis_result",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "diagnosis_code",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "differential_diagnosis",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "treatment_plan",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "medical_advice",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "is_primary",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "诊断",
+      "llm_description": "存储诊断记录信息"
+    },
+    "doctors": {
+      "name": "doctors",
+      "comment": "医生表",
+      "columns": [
+        {
+          "name": "doctor_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "doctor_code",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "doctor_name",
+          "data_type": "varchar",
+          "key": "MUL"
+        },
+        {
+          "name": "gender",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "birth_date",
+          "data_type": "date",
+          "key": ""
+        },
+        {
+          "name": "id_card",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "phone",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "email",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "department_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "title",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "position",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "specialty",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "education",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "work_years",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "registration_fee",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "is_specialist",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "is_active",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "hire_date",
+          "data_type": "date",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "医生信息",
+      "llm_description": "存储医生基本信息"
+    },
+    "examination_items": {
+      "name": "examination_items",
+      "comment": "检查项目表",
+      "columns": [
+        {
+          "name": "item_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "item_code",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "item_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "category",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "subcategory",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "department_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "price",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "unit",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "normal_range",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "clinical_significance",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "precautions",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "is_active",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "检查",
+      "llm_description": "存储检查项目定义"
+    },
+    "examination_results": {
+      "name": "examination_results",
+      "comment": "检查结果表",
+      "columns": [
+        {
+          "name": "result_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "result_no",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "registration_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "item_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "examination_date",
+          "data_type": "datetime",
+          "key": "MUL"
+        },
+        {
+          "name": "result_value",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "result_text",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "is_normal",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "reference_range",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "unit",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "technician_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "auditor_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "audit_date",
+          "data_type": "datetime",
+          "key": ""
+        },
+        {
+          "name": "equipment_info",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "remarks",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "检查",
+      "llm_description": "存储检查结果记录"
+    },
+    "hospitalizations": {
+      "name": "hospitalizations",
+      "comment": "住院记录表",
+      "columns": [
+        {
+          "name": "hospitalization_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "hospitalization_no",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "hospital_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "department_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "doctor_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "admission_date",
+          "data_type": "datetime",
+          "key": "MUL"
+        },
+        {
+          "name": "discharge_date",
+          "data_type": "datetime",
+          "key": ""
+        },
+        {
+          "name": "bed_no",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "room_no",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "admission_type",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "admission_status",
+          "data_type": "varchar",
+          "key": "MUL"
+        },
+        {
+          "name": "chief_complaint",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "admission_diagnosis",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "discharge_diagnosis",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "treatment_outcome",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "total_cost",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "deposit",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "emergency_contact",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "emergency_phone",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "remarks",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "住院",
+      "llm_description": "存储住院记录信息"
+    },
+    "hospitals": {
+      "name": "hospitals",
+      "comment": "医院信息表",
+      "columns": [
+        {
+          "name": "hospital_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "hospital_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "hospital_code",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "level",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "type",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "address",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "phone",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "email",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "website",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "established_date",
+          "data_type": "date",
+          "key": ""
+        },
+        {
+          "name": "bed_count",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "description",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "医院信息",
+      "llm_description": "存储医院基本信息"
+    },
+    "medicines": {
+      "name": "medicines",
+      "comment": "药品信息表",
+      "columns": [
+        {
+          "name": "medicine_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "medicine_code",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "medicine_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "generic_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "english_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "dosage_form",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "specification",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "manufacturer",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "approval_no",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "category",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "drug_type",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "unit",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "price",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "stock_quantity",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "min_stock",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "max_stock",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "storage_conditions",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "indications",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "contraindications",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "adverse_reactions",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "precautions",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "validity_period",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "is_active",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "药品",
+      "llm_description": "存储药品信息"
+    },
+    "patients": {
+      "name": "patients",
+      "comment": "患者表",
+      "columns": [
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "patient_code",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "patient_name",
+          "data_type": "varchar",
+          "key": "MUL"
+        },
+        {
+          "name": "gender",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "birth_date",
+          "data_type": "date",
+          "key": ""
+        },
+        {
+          "name": "id_card",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "medical_card_no",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "phone",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "emergency_contact",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "emergency_phone",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "address",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "marital_status",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "occupation",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "blood_type",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "allergy_history",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "medical_history",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "family_history",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "is_active",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "患者信息",
+      "llm_description": "存储患者基本信息"
+    },
+    "prescription_details": {
+      "name": "prescription_details",
+      "comment": "处方明细表",
+      "columns": [
+        {
+          "name": "detail_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "prescription_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "medicine_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "quantity",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "unit",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "dosage",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "frequency",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "duration",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "price",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "subtotal",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "remarks",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "治疗",
+      "llm_description": "存储处方明细信息"
+    },
+    "prescriptions": {
+      "name": "prescriptions",
+      "comment": "处方表",
+      "columns": [
+        {
+          "name": "prescription_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "prescription_no",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "registration_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "doctor_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "prescription_date",
+          "data_type": "datetime",
+          "key": "MUL"
+        },
+        {
+          "name": "prescription_type",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "total_amount",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "usage_method",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "treatment_days",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "pharmacist_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "dispensing_date",
+          "data_type": "datetime",
+          "key": ""
+        },
+        {
+          "name": "remarks",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "治疗",
+      "llm_description": "存储处方主记录"
+    },
+    "registrations": {
+      "name": "registrations",
+      "comment": "挂号记录表",
+      "columns": [
+        {
+          "name": "registration_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "registration_no",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "hospital_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "department_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "doctor_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "registration_type",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "visit_date",
+          "data_type": "date",
+          "key": "MUL"
+        },
+        {
+          "name": "time_slot",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "registration_fee",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "actual_fee",
+          "data_type": "decimal",
+          "key": ""
+        },
+        {
+          "name": "payment_status",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "payment_method",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "is_first_visit",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "complaint",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "挂号",
+      "llm_description": "存储挂号记录信息"
+    },
+    "roles": {
+      "name": "roles",
+      "comment": "角色权限表",
+      "columns": [
+        {
+          "name": "role_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "role_name",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "role_code",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "description",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "permissions",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "is_active",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "权限管理",
+      "llm_description": "存储角色和权限信息"
+    },
+    "surgeries": {
+      "name": "surgeries",
+      "comment": "手术记录表",
+      "columns": [
+        {
+          "name": "surgery_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "surgery_no",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "hospitalization_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "registration_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "doctor_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "surgery_date",
+          "data_type": "datetime",
+          "key": "MUL"
+        },
+        {
+          "name": "surgery_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "surgery_level",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "anesthesia_method",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "surgery_duration",
+          "data_type": "int",
+          "key": ""
+        },
+        {
+          "name": "preoperative_diagnosis",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "postoperative_diagnosis",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "surgery_description",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "complications",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "pathology_result",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "surgery_outcome",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "is_emergency",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "assistant_doctors",
+          "data_type": "text",
+          "key": ""
+        },
+        {
+          "name": "anesthesiologist",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "scrub_nurse",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "circulating_nurse",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "治疗",
+      "llm_description": "存储手术记录信息"
+    },
+    "users": {
+      "name": "users",
+      "comment": "用户表",
+      "columns": [
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "key": "PRI"
+        },
+        {
+          "name": "username",
+          "data_type": "varchar",
+          "key": "UNI"
+        },
+        {
+          "name": "password_hash",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "real_name",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "role_id",
+          "data_type": "int",
+          "key": "MUL"
+        },
+        {
+          "name": "email",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "phone",
+          "data_type": "varchar",
+          "key": ""
+        },
+        {
+          "name": "is_active",
+          "data_type": "tinyint",
+          "key": ""
+        },
+        {
+          "name": "last_login",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "key": ""
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "key": ""
+        }
+      ],
+      "llm_category": "用户管理",
+      "llm_description": "存储系统用户信息"
+    }
+  },
+  "root": {
+    "name": "/",
+    "type": "directory",
+    "children": [
+      {
+        "name": "医院组织",
+        "type": "directory",
+        "children": [
+          {
+            "name": "医院表",
+            "type": "file",
+            "tableName": "hospitals",
+            "description": "存储医院基本信息",
+            "path": "/医院组织/医院表"
+          },
+          {
+            "name": "科室表",
+            "type": "file",
+            "tableName": "departments",
+            "description": "存储科室信息",
+            "path": "/医院组织/科室表"
+          },
+          {
+            "name": "医生表",
+            "type": "file",
+            "tableName": "doctors",
+            "description": "存储医生基本信息",
+            "path": "/医院组织/医生表"
+          }
+        ],
+        "path": "/医院组织"
+      },
+      {
+        "name": "患者服务",
+        "type": "directory",
+        "children": [
+          {
+            "name": "患者表",
+            "type": "file",
+            "tableName": "patients",
+            "description": "存储患者基本信息",
+            "path": "/患者服务/患者表"
+          },
+          {
+            "name": "挂号表",
+            "type": "file",
+            "tableName": "registrations",
+            "description": "存储挂号记录信息",
+            "path": "/患者服务/挂号表"
+          },
+          {
+            "name": "诊断表",
+            "type": "file",
+            "tableName": "diagnoses",
+            "description": "存储诊断记录信息",
+            "path": "/患者服务/诊断表"
+          },
+          {
+            "name": "住院表",
+            "type": "file",
+            "tableName": "hospitalizations",
+            "description": "存储住院记录信息",
+            "path": "/患者服务/住院表"
+          },
+          {
+            "name": "手术表",
+            "type": "file",
+            "tableName": "surgeries",
+            "description": "存储手术记录信息",
+            "path": "/患者服务/手术表"
+          }
+        ],
+        "path": "/患者服务"
+      },
+      {
+        "name": "医疗操作",
+        "type": "directory",
+        "children": [
+          {
+            "name": "检查项目表",
+            "type": "file",
+            "tableName": "examination_items",
+            "description": "存储检查项目定义",
+            "path": "/医疗操作/检查项目表"
+          },
+          {
+            "name": "检查结果表",
+            "type": "file",
+            "tableName": "examination_results",
+            "description": "存储检查结果记录",
+            "path": "/医疗操作/检查结果表"
+          },
+          {
+            "name": "处方主表",
+            "type": "file",
+            "tableName": "prescriptions",
+            "description": "存储处方主记录",
+            "path": "/医疗操作/处方主表"
+          },
+          {
+            "name": "处方明细表",
+            "type": "file",
+            "tableName": "prescription_details",
+            "description": "存储处方明细信息",
+            "path": "/医疗操作/处方明细表"
+          },
+          {
+            "name": "药品表",
+            "type": "file",
+            "tableName": "medicines",
+            "description": "存储药品信息",
+            "path": "/医疗操作/药品表"
+          }
+        ],
+        "path": "/医疗操作"
+      },
+      {
+        "name": "财务管理",
+        "type": "directory",
+        "children": [
+          {
+            "name": "收费表",
+            "type": "file",
+            "tableName": "charges",
+            "description": "存储收费记录信息",
+            "path": "/财务管理/收费表"
+          }
+        ],
+        "path": "/财务管理"
+      },
+      {
+        "name": "系统管理",
+        "type": "directory",
+        "children": [
+          {
+            "name": "用户表",
+            "type": "file",
+            "tableName": "users",
+            "description": "存储系统用户信息",
+            "path": "/系统管理/用户表"
+          },
+          {
+            "name": "角色表",
+            "type": "file",
+            "tableName": "roles",
+            "description": "存储角色和权限信息",
+            "path": "/系统管理/角色表"
+          }
+        ],
+        "path": "/系统管理"
+      }
+    ],
+    "path": "/"
+  }
+}

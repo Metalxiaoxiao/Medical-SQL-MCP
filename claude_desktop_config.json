@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "medical-sql": {
+      "command": "node",
+      "args": ["C:\\dev\\TimeManager\\Medical-SQL-MCP\\dist\\mcp-server.js"],
+      "transport": {
+        "type": "http",
+        "baseUrl": "http://localhost:3001/api"
+      },
+      "env": {
+        "DB_HOST": "127.0.0.1",
+        "DB_PORT": "3306",
+        "DB_USER": "root",
+        "DB_PASSWORD": "Xx41172120060902zcs",
+        "DB_DATABASE": "hospital_management",
+        "OPENAI_API_KEY": "sk-6583bbeccf4c44e19008491de096a7bf",
+        "OPENAI_BASE_URL": "https://api.deepseek.com/v1",
+        "OPENAI_MODEL": "deepseek-reasoner",
+        "PORT": "3001"
+      }
+    }
+  }
+}
