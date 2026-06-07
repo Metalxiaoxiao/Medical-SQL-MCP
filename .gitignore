@@ -75,7 +75,7 @@ Thumbs.db
 schema-cache.json
 .env
 
-case-embeddings-cache.json
+./case-embeddings-cache.json
 
 /tests/
 /examples/
