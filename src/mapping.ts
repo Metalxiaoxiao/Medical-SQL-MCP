@@ -1,8 +1,8 @@
 import { introspect } from './db';
-import { callOpenAIChatWithLogging } from './llm-logger';
-
-type Column = { name: string; data_type: string; key: string };
-type Table = { name: string; comment?: string; columns: Column[]; llm_category?: string; llm_description?: string };
+import { callOpenAIChat } from './llm';
+import { log } from './logger';
+export type Column = { name: string; data_type: string; key: string };
+export type Table = { name: string; comment?: string; columns: Column[]; llm_category?: string; llm_description?: string };
 
 export type PathNode = {
   name: string;
@@ -40,7 +40,7 @@ export async function buildVirtualTree(database?: string): Promise<VirtualTree> 
   let useTableList = Object.values(tableMap);
   if (process.env.OPENAI_API_KEY) {
     try {
-      console.log('Using LLM to analyze database schema...');
+      log.info('Using LLM to analyze database schema...');
       useTableList = await categorizeTablesWithLLM(Object.values(tableMap));
     } catch (err) {
       console.warn('Failed to use LLM for schema analysis, falling back to heuristics:', err);
@@ -57,7 +57,7 @@ export async function buildVirtualTree(database?: string): Promise<VirtualTree> 
   let root: PathNode | undefined;
   if (process.env.OPENAI_API_KEY) {
     try {
-      console.log('Using LLM to build path structure...');
+      log.info('Using LLM to build path structure...');
       root = await organizeTablesIntoPaths(useTableList);
     } catch (err) {
       console.warn('Failed to build path structure with LLM:', err);
@@ -95,7 +95,7 @@ export async function organizeTablesIntoPaths(tables: Table[]): Promise<PathNode
 
   const userPrompt = `请组织以下表：\n${tableSummaries}`;
 
-  const response = await callOpenAIChatWithLogging(system, userPrompt);
+  const response = await callOpenAIChat(system, userPrompt);
 
   const jsonMatch = response.match(/\{[\s\S]*\}/);
   if (!jsonMatch) {
@@ -140,7 +140,7 @@ async function categorizeTablesWithLLM(tables: Table[]): Promise<Table[]> {
 
   const userPrompt = `请分析以下医院数据库表结构，为每个表分配适当的语义分类和描述：\n${schemaSummary}\n\n返回 JSON 数组。`;
 
-  const response = await callOpenAIChatWithLogging(system, userPrompt);
+  const response = await callOpenAIChat(system, userPrompt);
 
   // Parse JSON from response
   const jsonMatch = response.match(/\[[\s\S]*\]/);

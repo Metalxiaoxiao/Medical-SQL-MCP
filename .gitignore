@@ -2,6 +2,7 @@
 
 # Dependencies
 /node_modules/
+/ElasticSearchServer/
 
 # Logs
 npm-debug.log*
@@ -73,3 +74,7 @@ Thumbs.db
 *.log.*
 schema-cache.json
 .env
+
+/tests/
+/examples/
+/docs/

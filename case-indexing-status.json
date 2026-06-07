@@ -1,0 +1,10 @@
+{
+  "isIndexing": false,
+  "totalCases": 0,
+  "indexedCases": 809,
+  "failedCases": 1,
+  "startTime": "2026-01-29T09:12:48.830Z",
+  "currentIndex": "surgery_records",
+  "endTime": "2026-01-29T09:18:11.087Z",
+  "lastError": "search_phase_execution_exception\n\tCaused by:\n\t\tillegal_argument_exception: Result window is too large, from + size must be less than or equal to: [10000] but was [10073]. See the scroll api for a more efficient way to request large data sets. This limit can be set by changing the [index.max_result_window] index level setting.\n\tRoot causes:\n\t\tillegal_argument_exception: Result window is too large, from + size must be less than or equal to: [10000] but was [10073]. See the scroll api for a more efficient way to request large data sets. This limit can be set by changing the [index.max_result_window] index level setting."
+}

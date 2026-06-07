@@ -6,15 +6,25 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/mcp-server.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/mcp-server.ts"
+    "start:blocking": "node start-with-blocking.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/mcp-server.ts",
+    "example:medical-terms": "ts-node examples/medical-term-tools-example.ts",
+    "example:elasticsearch": "ts-node examples/elasticsearch-example.ts",
+    "example:medical-index": "ts-node examples/medical-index-example.ts",
+    "test:blocking": "node test-blocking-init.js",
+    "test:medical-term-init": "node test-medical-term-init.js"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "^9.2.0",
+    "@elastic/elasticsearch8": "npm:@elastic/elasticsearch@^8.19.1",
     "@modelcontextprotocol/sdk": "^1.22.0",
+    "@types/pg": "^8.15.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.21.2",
     "mysql2": "^3.5.0",
     "openai": "^4.24.0",
+    "pg": "^8.16.3",
     "zod": "^3.25.76"
   },
   "devDependencies": {

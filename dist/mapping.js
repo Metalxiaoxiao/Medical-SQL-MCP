@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildVirtualTree = buildVirtualTree;
 exports.organizeTablesIntoPaths = organizeTablesIntoPaths;
 const db_1 = require("./db");
-const llm_logger_1 = require("./llm-logger");
+const llm_1 = require("./llm");
+const logger_1 = require("./logger");
 async function buildVirtualTree(database) {
     const { tables, columns, fks } = await (0, db_1.introspect)(database);
     const tablesArray = tables;
@@ -22,7 +23,7 @@ async function buildVirtualTree(database) {
     let useTableList = Object.values(tableMap);
     if (process.env.OPENAI_API_KEY) {
         try {
-            console.log('Using LLM to analyze database schema...');
+            logger_1.log.info('Using LLM to analyze database schema...');
             useTableList = await categorizeTablesWithLLM(Object.values(tableMap));
         }
         catch (err) {
@@ -38,7 +39,7 @@ async function buildVirtualTree(database) {
     let root;
     if (process.env.OPENAI_API_KEY) {
         try {
-            console.log('Using LLM to build path structure...');
+            logger_1.log.info('Using LLM to build path structure...');
             root = await organizeTablesIntoPaths(useTableList);
         }
         catch (err) {
@@ -72,7 +73,7 @@ async function organizeTablesIntoPaths(tables) {
   ]
 }`;
     const userPrompt = `请组织以下表：\n${tableSummaries}`;
-    const response = await (0, llm_logger_1.callOpenAIChatWithLogging)(system, userPrompt);
+    const response = await (0, llm_1.callOpenAIChat)(system, userPrompt);
     const jsonMatch = response.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
         throw new Error('LLM response did not contain valid JSON');
@@ -108,7 +109,7 @@ async function categorizeTablesWithLLM(tables) {
   "description": "表的简短描述（中文）"
 }`;
     const userPrompt = `请分析以下医院数据库表结构，为每个表分配适当的语义分类和描述：\n${schemaSummary}\n\n返回 JSON 数组。`;
-    const response = await (0, llm_logger_1.callOpenAIChatWithLogging)(system, userPrompt);
+    const response = await (0, llm_1.callOpenAIChat)(system, userPrompt);
     // Parse JSON from response
     const jsonMatch = response.match(/\[[\s\S]*\]/);
     if (!jsonMatch) {
